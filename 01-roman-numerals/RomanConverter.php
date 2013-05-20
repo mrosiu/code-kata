@@ -25,9 +25,7 @@ class RomanConverter
             return '';
         }
         list ($arabic, $roman) = $this->converstionFactorFor($inArabic);
-        $roman .= $this->convert($inArabic - $arabic);
-
-        return $roman;
+        return $roman . $this->convert($inArabic - $arabic);
     }
 
     protected function converstionFactorFor($inArabic)
