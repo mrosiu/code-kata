@@ -1,0 +1,11 @@
+{
+    "require": {
+        "mockery/mockery" : "dev-master@dev",
+        "kriswallsmith/buzz": "v0.10"
+    },
+    "autoload": {
+        "psr-0": {
+            "" : ""
+        }
+    }
+}
