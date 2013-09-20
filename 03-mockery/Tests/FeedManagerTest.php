@@ -39,6 +39,17 @@ class FeedManagerTest extends \PHPUnit_Framework_TestCase
         $this->object->setupFeed($this->configMock);
         $this->object->fetchItemsByKeyword("");
     }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testValidXml()
+    {
+        $this->mock->shouldReceive('get')->once()->andReturn('');
+        $this->object->setupFeed($this->configMock);
+        $this->object->fetchItemsByKeyword("Null");
+    }
+
     public function testRetrieve()
     {
         $this->mock->shouldReceive('get')->once()->andReturn(file_get_contents(__DIR__ . '/fixtures.xml'));
